@@ -5,6 +5,8 @@ from . import views
 app_name = 'polls'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    # ex: /polls/trending/
+    url(r'^trending/$', views.trending, name='trending'),
     # ex: /polls/5/
     url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
     # ex: /polls/5/results/

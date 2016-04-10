@@ -23,6 +23,7 @@ from django.utils.encoding import python_2_unicode_compatible
 class Question(models.Model):
 	question = models.CharField(max_length=200)
 	pub_date = models.DateTimeField('date published') #designate a human readable name
+	total_responses = models.IntegerField(default=0)
 	def __str__(self):
 		return self.question
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trending</title>
+</head>
+<body>
+	<h1>Crowd's favourite questions</h1>
+	{% for q in list.all %}
+		<li>{{q.question}} :: {{q.total_responses}}</li>
+	{% endfor %}
+
+	<h1>Trending in past few hours</h1>
+
+</body>
+</html>

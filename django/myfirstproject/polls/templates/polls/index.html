@@ -1,11 +1,27 @@
-{% if latest_question_list %}
-	<ul>
-		{% for question in latest_question_list %}
-			<!-- <li><a href="/polls/{{question.id}}/">{{question.question}}</a></li> -->
-			<!-- Alternate method than hardcoded urls, namespaced -->
-			<li><a href="{% url 'polls:detail' question.id %}">{{question.question}}</a></li>
-		{% endfor %}
-	</ul>
-{% else %}
-	<p>No polls are available</p>
-{% endif%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>says the lot</title>
+</head>
+<body>
+
+
+	{% if latest_question_list %}
+		<ul>
+			{% for question in latest_question_list %}
+				<!-- <li><a href="/polls/{{question.id}}/">{{question.question}}</a></li> -->
+				<!-- Alternate method than hardcoded urls, namespaced -->
+				<li><a href="{% url 'polls:detail' question.id %}">{{question.question}}</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No polls are available</p>
+	{% endif%}
+
+	<a href="{% url 'polls:trending'%}"> Trending Polls</a>
+
+</body>
+</html>
+
+
+
